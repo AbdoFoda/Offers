@@ -62,13 +62,19 @@ class DetailViewController: UIViewController {
         self.lblFavCount.text = String(offer.favoriteCount)
         self.lblOfferTitle.text = offer.title
         self.lblOfferDesc.text = offer.offerDetailsModelDescription
-        self.lblOldPrice.text = offer.price.old
+        self.lblOldPrice.attributedText = strikeThrough(text: offer.price.new)
         self.lblDiscountPrice.text = offer.price.new
         self.lblExpDate.text = offer.expiration
         self.lblRedemptions.text = offer.redemptionsCap
     }
    
     
+    
+    func strikeThrough(text: String) -> NSMutableAttributedString {
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: text)
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+        return attributeString
+    }
     
     //MARK:- Actions
     @IBAction func shareButtonTapped(_ sender: Any) {
