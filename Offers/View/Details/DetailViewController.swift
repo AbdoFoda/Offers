@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftSpinner
 class DetailViewController: UIViewController {
     
     //MARK:- Variables
@@ -32,7 +31,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // First: check if the url is presented
         if let _ = detailsUrl {
-            SwiftSpinner.show("Loading Offer Details...")
+            self.loading(true)
+            scrollView.isHidden = true
             getData()
         }else{
             // If not, we just hide everything.
@@ -46,10 +46,10 @@ class DetailViewController: UIViewController {
     // Ask the presenter for offer data
     func getData(){
         self.presenter.getOfferDetails(from: detailsUrl!, onSuccess: { (offer) in
-            SwiftSpinner.hide()
+            self.loading(false)
             self.loadUI(from: offer)
         }) { (error) in
-            SwiftSpinner.hide()
+            self.loading(false)
             print(error)
         }
     }
@@ -66,6 +66,7 @@ class DetailViewController: UIViewController {
         self.lblDiscountPrice.text = offer.price.new
         self.lblExpDate.text = offer.expiration
         self.lblRedemptions.text = offer.redemptionsCap
+        scrollView.isHidden = false
     }
    
     

@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "SwiftSpinner.h"
+#import "MBProgressHUD.h"
 
-FOUNDATION_EXPORT double SwiftSpinnerVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftSpinnerVersionString[];
+FOUNDATION_EXPORT double MBProgressHUDVersionNumber;
+FOUNDATION_EXPORT const unsigned char MBProgressHUDVersionString[];
 

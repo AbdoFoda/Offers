@@ -17,7 +17,8 @@ import Foundation
 struct OfferDetailsModel: Codable {
     let id: Int
     let imageURL: String
-    let brand, title, tags: String
+    let brand, title: String
+    let tags: String?
     let favoriteCount: Int
     let offerDetailsModelDescription: String
     let price: Price

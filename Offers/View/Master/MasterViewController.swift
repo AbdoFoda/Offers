@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftSpinner
 import Kingfisher
 
 class MasterViewController: UIViewController {
@@ -27,14 +26,14 @@ class MasterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SwiftSpinner.show("Loading Offers...")
+        self.loading(true)
         presenter.getAllOffers(onSuccess: { (offers) in
-            SwiftSpinner.hide()
+            self.loading(false)
             self.title = offers.title
             self.sections = offers.sections
             self.offersTableView.reloadData()
         }) { (error) in
-            SwiftSpinner.hide()
+            self.loading(false)
             print("Network error:\(error)")
         }
     }
