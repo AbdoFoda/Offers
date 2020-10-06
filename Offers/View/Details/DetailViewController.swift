@@ -30,16 +30,20 @@ class DetailViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // First: check if the url is presented
         if let _ = detailsUrl {
             SwiftSpinner.show("Loading Offer Details...")
             getData()
         }else{
+            // If not, we just hide everything.
+            // this case happened when no item is selected, and the splitter is trying to show the details
             scrollView.isHidden = true
         }
     }
 
     
     //MARK:- Data Loading
+    // Ask the presenter for offer data
     func getData(){
         self.presenter.getOfferDetails(from: detailsUrl!, onSuccess: { (offer) in
             SwiftSpinner.hide()
@@ -51,7 +55,7 @@ class DetailViewController: UIViewController {
     }
     
     
-    
+    // Updating the UI with the given offer data
     func loadUI(from offer: OfferDetailsModel) {
         self.offerImageView.kf.setImage(with: URL(string: offer.imageURL))
         self.lblBrand.text = offer.brand

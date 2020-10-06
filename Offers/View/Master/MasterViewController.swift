@@ -46,6 +46,7 @@ class MasterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let details = segue.destination.children[0] as? DetailViewController {
             if let item = selectedItem {
+                // pass selected item url
                 details.detailsUrl = item.detailURL
             }
         }
@@ -95,6 +96,7 @@ extension MasterViewController: UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //save the selected item to be used in 'prepare' function
         self.selectedItem = sections[indexPath.section].items[indexPath.row]
         self.performSegue(withIdentifier: "showDetails", sender: self)
     }
