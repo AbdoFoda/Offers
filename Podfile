@@ -6,6 +6,8 @@ target 'Offers' do
   use_frameworks!
  pod "SwiftSpinner"
  pod "Alamofire"
+ pod "netfox"
+ pod "Kingfisher"
   # Pods for Offers
 
 end

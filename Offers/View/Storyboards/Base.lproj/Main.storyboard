@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,7 +76,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="wkj-Fw-dib"/>
                                                 </constraints>
-                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum lectus. Dictumst quisque sagittis purus sit amet volutpat consequat mauris. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Viverra aliquet eget sit amet tellus. Sit amet justo donec enim diam vulputate ut. Vel facilisis volutpat est velit egestas dui id. A scelerisque purus semper eget. Volutpat commodo sed egestas egestas fringilla phasellus. Urna molestie at elementum eu facilisis sed. Velit ut tortor pretium viverra. Sit amet volutpat consequat mauris nunc congue. Accumsan in nisl nisi scelerisque eu. Duis at consectetur lorem donec massa sapien faucibus et.</mutableString>
+                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum lectus. Dictumst quisque sagittis purus sit amet volutpat consequat mauris. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Viverra aliquet eget sit amet tellus. Sit amet justo donec enim diam vulputate ut. Vel facilisis volutpat est velit egestas dui id. A scelerisque purus semper eget. Volutpat commodo sed egestas egestas fringilla phasellus. Urna molestie at elementum eu facilisis sed. Velit ut tortor pretium viverra. Sit amet volutpat consequat mauris nunc congue. Accumsan in nisl nisi scelerisque eu. Duis at consectetur lorem donec massa sapien faucibus et.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -177,21 +178,39 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="heart.stroke" id="hPH-TS-P6O">
                                 <color key="tintColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="heartIconTapped:" destination="JEX-9P-axG" id="lf3-YE-Aol"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="share" id="NgW-6U-gv9">
                                 <color key="tintColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="JEX-9P-axG" id="eXW-Q9-Ads"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lblBrand" destination="Udh-jB-qXC" id="c0o-SD-Abs"/>
+                        <outlet property="lblDiscountPrice" destination="YEJ-bv-m16" id="e9y-8I-O0q"/>
+                        <outlet property="lblExpDate" destination="b7Q-jO-1FZ" id="6TL-si-P2S"/>
+                        <outlet property="lblFavCount" destination="4uL-pl-NqV" id="WG4-Xx-Avj"/>
+                        <outlet property="lblOfferDesc" destination="Mdq-OR-sfR" id="pbL-hz-Ewd"/>
+                        <outlet property="lblOfferTitle" destination="G5K-pZ-rm3" id="5qm-7T-DOu"/>
+                        <outlet property="lblOldPrice" destination="RBB-k8-NHl" id="gWA-ct-SGm"/>
+                        <outlet property="lblRedemptions" destination="bTf-um-bWM" id="vig-lg-XsR"/>
+                        <outlet property="offerImageView" destination="sEX-UA-VGd" id="Zz3-Xr-FFz"/>
+                        <outlet property="scrollView" destination="m86-YL-VVQ" id="E0M-LO-B8n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="785.50724637681162" y="128.57142857142856"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Primary Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
-                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                <splitViewController id="H1p-Uh-vWS" customClass="PrimarySplitViewController" customModule="Offers" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
@@ -229,7 +248,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEh-GB-akl">
-                                                    <rect key="frame" x="135" y="20" width="37" height="23"/>
+                                                    <rect key="frame" x="135" y="20" width="186" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.41572131849315069" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -247,11 +266,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" translatesAutoresizingMaskIntoConstraints="NO" id="5xh-Tr-vdV">
-                                                    <rect key="frame" x="296" y="15.5" width="30" height="30"/>
+                                                    <rect key="frame" x="329" y="15.5" width="30" height="30"/>
                                                     <color key="tintColor" white="0.33333333333333331" alpha="0.75053510273972601" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="IYR-qc-scs"/>
+                                                        <constraint firstAttribute="width" constant="30" id="uOZ-7L-H5w"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fav_count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-vv-Klx">
-                                                    <rect key="frame" x="331" y="20" width="73" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-vv-Klx">
+                                                    <rect key="frame" x="364" y="20" width="50" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="LEG-Ke-g2D"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -265,9 +291,9 @@
                                                 <constraint firstItem="nEh-GB-akl" firstAttribute="top" secondItem="5Vc-B6-N4x" secondAttribute="top" id="DFZ-7C-ZLc"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rf1-8e-dqM" secondAttribute="trailing" constant="10" id="Eia-Fb-IXY"/>
                                                 <constraint firstItem="5Vc-B6-N4x" firstAttribute="leading" secondItem="fbx-9A-ISg" secondAttribute="leading" constant="20" id="I3x-v4-tcs"/>
-                                                <constraint firstItem="5xh-Tr-vdV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nEh-GB-akl" secondAttribute="trailing" id="LAq-El-Bln"/>
+                                                <constraint firstItem="5xh-Tr-vdV" firstAttribute="leading" secondItem="nEh-GB-akl" secondAttribute="trailing" constant="8" id="LAq-El-Bln"/>
                                                 <constraint firstAttribute="bottom" secondItem="5Vc-B6-N4x" secondAttribute="bottom" constant="20" id="OhH-Rh-x2X"/>
-                                                <constraint firstAttribute="trailing" secondItem="Yoh-vv-Klx" secondAttribute="trailing" constant="10" id="Qvs-Yv-Q4b"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yoh-vv-Klx" secondAttribute="trailing" id="Qvs-Yv-Q4b"/>
                                                 <constraint firstItem="Yoh-vv-Klx" firstAttribute="top" secondItem="5Vc-B6-N4x" secondAttribute="top" id="V8X-KD-q7P"/>
                                                 <constraint firstItem="Yoh-vv-Klx" firstAttribute="leading" secondItem="5xh-Tr-vdV" secondAttribute="trailing" constant="5" id="VJx-4g-wio"/>
                                                 <constraint firstItem="5xh-Tr-vdV" firstAttribute="centerY" secondItem="Yoh-vv-Klx" secondAttribute="centerY" id="ZvJ-p9-aHK"/>
@@ -304,6 +330,7 @@
                     <navigationItem key="navigationItem" title="Lucky Offers" id="xYF-le-h0Y"/>
                     <connections>
                         <outlet property="offersTableView" destination="hpR-7l-C0U" id="rtu-N1-lC8"/>
+                        <outlet property="pageTitleNavigationItem" destination="xYF-le-h0Y" id="eee-Lp-ImQ"/>
                         <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetails" id="FM1-4i-Mf3"/>
                     </connections>
                 </viewController>
@@ -315,6 +342,7 @@
         <scene sceneID="r7l-gg-dq7">
             <objects>
                 <navigationController id="vC3-pB-5Vb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="meg-gr-fwN"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

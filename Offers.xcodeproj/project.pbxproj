@@ -14,6 +14,14 @@
 		2BD6F1A5252C3F510029AF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6F1A4252C3F510029AF85 /* Assets.xcassets */; };
 		2BD6F1A8252C3F510029AF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD6F1A6252C3F510029AF85 /* LaunchScreen.storyboard */; };
 		2BD6F1B0252C492C0029AF85 /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1AF252C492C0029AF85 /* OffersTableViewCell.swift */; };
+		2BD6F1B6252C6E7C0029AF85 /* OffersAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1B5252C6E7C0029AF85 /* OffersAPIRouter.swift */; };
+		2BD6F1B8252C70300029AF85 /* OffersAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1B7252C70300029AF85 /* OffersAPIClient.swift */; };
+		2BD6F1BD252C762F0029AF85 /* LuckyOffersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1BC252C762F0029AF85 /* LuckyOffersModel.swift */; };
+		2BD6F1BF252CAED80029AF85 /* PrimarySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1BE252CAED80029AF85 /* PrimarySplitViewController.swift */; };
+		2BD6F1C3252CAFF60029AF85 /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1C2252CAFF60029AF85 /* MasterPresenter.swift */; };
+		2BD6F1C5252CC2440029AF85 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1C4252CC2440029AF85 /* DetailsPresenter.swift */; };
+		2BD6F1C7252CC2A00029AF85 /* OfferDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1C6252CC2A00029AF85 /* OfferDetailsModel.swift */; };
+		2BD6F1C9252CC46F0029AF85 /* BaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD6F1C8252CC46F0029AF85 /* BaseAPIClient.swift */; };
 		7E5BF27CB7EC05E3034A301E /* Pods_Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C50D87D70B8EABF02E58145 /* Pods_Offers.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +35,14 @@
 		2BD6F1A7252C3F510029AF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BD6F1A9252C3F510029AF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BD6F1AF252C492C0029AF85 /* OffersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersTableViewCell.swift; sourceTree = "<group>"; };
+		2BD6F1B5252C6E7C0029AF85 /* OffersAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersAPIRouter.swift; sourceTree = "<group>"; };
+		2BD6F1B7252C70300029AF85 /* OffersAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersAPIClient.swift; sourceTree = "<group>"; };
+		2BD6F1BC252C762F0029AF85 /* LuckyOffersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyOffersModel.swift; sourceTree = "<group>"; };
+		2BD6F1BE252CAED80029AF85 /* PrimarySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySplitViewController.swift; sourceTree = "<group>"; };
+		2BD6F1C2252CAFF60029AF85 /* MasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
+		2BD6F1C4252CC2440029AF85 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		2BD6F1C6252CC2A00029AF85 /* OfferDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsModel.swift; sourceTree = "<group>"; };
+		2BD6F1C8252CC46F0029AF85 /* BaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIClient.swift; sourceTree = "<group>"; };
 		60F4AA5EF95621005B8191F2 /* Pods-Offers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Offers.release.xcconfig"; path = "Target Support Files/Pods-Offers/Pods-Offers.release.xcconfig"; sourceTree = "<group>"; };
 		7C50D87D70B8EABF02E58145 /* Pods_Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E52B2715FAF131D532C261 /* Pods-Offers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Offers.debug.xcconfig"; path = "Target Support Files/Pods-Offers/Pods-Offers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,16 +98,80 @@
 		2BD6F198252C3F4E0029AF85 /* Offers */ = {
 			isa = PBXGroup;
 			children = (
+				2BD6F1BB252C75D70029AF85 /* Models */,
+				2BD6F1B4252C6E630029AF85 /* Network */,
+				2BD6F1C1252CAFB50029AF85 /* Presenters */,
+				2BD6F1C0252CAF3E0029AF85 /* View */,
 				2BD6F199252C3F4E0029AF85 /* AppDelegate.swift */,
-				2BD6F19D252C3F4E0029AF85 /* MasterViewController.swift */,
-				2BD6F19F252C3F4E0029AF85 /* DetailViewController.swift */,
-				2BD6F1A1252C3F4E0029AF85 /* Main.storyboard */,
 				2BD6F1A4252C3F510029AF85 /* Assets.xcassets */,
-				2BD6F1A6252C3F510029AF85 /* LaunchScreen.storyboard */,
 				2BD6F1A9252C3F510029AF85 /* Info.plist */,
-				2BD6F1AF252C492C0029AF85 /* OffersTableViewCell.swift */,
 			);
 			path = Offers;
+			sourceTree = "<group>";
+		};
+		2BD6F1B1252C6E1C0029AF85 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6F1A1252C3F4E0029AF85 /* Main.storyboard */,
+				2BD6F1A6252C3F510029AF85 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2BD6F1B2252C6E2F0029AF85 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6F19D252C3F4E0029AF85 /* MasterViewController.swift */,
+				2BD6F1AF252C492C0029AF85 /* OffersTableViewCell.swift */,
+			);
+			path = Master;
+			sourceTree = "<group>";
+		};
+		2BD6F1B3252C6E3D0029AF85 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6F19F252C3F4E0029AF85 /* DetailViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		2BD6F1B4252C6E630029AF85 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6F1B5252C6E7C0029AF85 /* OffersAPIRouter.swift */,
+				2BD6F1B7252C70300029AF85 /* OffersAPIClient.swift */,
+				2BD6F1C8252CC46F0029AF85 /* BaseAPIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2BD6F1BB252C75D70029AF85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6F1BC252C762F0029AF85 /* LuckyOffersModel.swift */,
+				2BD6F1C6252CC2A00029AF85 /* OfferDetailsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2BD6F1C0252CAF3E0029AF85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6F1BE252CAED80029AF85 /* PrimarySplitViewController.swift */,
+				2BD6F1B1252C6E1C0029AF85 /* Storyboards */,
+				2BD6F1B2252C6E2F0029AF85 /* Master */,
+				2BD6F1B3252C6E3D0029AF85 /* Details */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BD6F1C1252CAFB50029AF85 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				2BD6F1C2252CAFF60029AF85 /* MasterPresenter.swift */,
+				2BD6F1C4252CC2440029AF85 /* DetailsPresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +291,15 @@
 			files = (
 				2BD6F19A252C3F4E0029AF85 /* AppDelegate.swift in Sources */,
 				2BD6F1B0252C492C0029AF85 /* OffersTableViewCell.swift in Sources */,
+				2BD6F1C9252CC46F0029AF85 /* BaseAPIClient.swift in Sources */,
+				2BD6F1BF252CAED80029AF85 /* PrimarySplitViewController.swift in Sources */,
+				2BD6F1C7252CC2A00029AF85 /* OfferDetailsModel.swift in Sources */,
+				2BD6F1B8252C70300029AF85 /* OffersAPIClient.swift in Sources */,
 				2BD6F19E252C3F4E0029AF85 /* MasterViewController.swift in Sources */,
+				2BD6F1BD252C762F0029AF85 /* LuckyOffersModel.swift in Sources */,
+				2BD6F1C3252CAFF60029AF85 /* MasterPresenter.swift in Sources */,
+				2BD6F1C5252CC2440029AF85 /* DetailsPresenter.swift in Sources */,
+				2BD6F1B6252C6E7C0029AF85 /* OffersAPIRouter.swift in Sources */,
 				2BD6F1A0252C3F4E0029AF85 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
